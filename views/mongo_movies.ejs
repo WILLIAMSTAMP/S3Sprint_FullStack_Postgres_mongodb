@@ -1,0 +1,106 @@
+<!-- This is the ejs for results for searching the MongoDB  -->
+
+<html lang="en">
+  <%- include('./partials/header.ejs') %>
+  <style>
+    body {
+      background-color: #f5f5f5;
+      font-family: sans-serif;
+      margin-bottom: 100px;
+
+      padding-top: 100px;
+    }
+
+    h3 {
+      margin-top: 0;
+      color: black;
+      text-align: left;
+    }
+  </style>
+  <body>
+    <%- include('./partials/nav2.ejs') %>
+
+    <div class="mongoMovies">
+      <h2 class="mTitle"><%= mongoMovies[0].title %> (<%= mongoMovies[0].year %>)</h2>
+      <% mongoMovies.forEach(result => { %>
+
+      <div class="moviesDetails">
+        <div class="mongDetails">
+          <div class="rating">
+            <h3>Rating</h3>
+            <% if (result.imdb.rating) {%>
+            <p>IMDB Rating: <%= result.imdb.rating %></p>
+            <% } %> <% if (result.metacritic) {%>
+            <p>Metacritic Rating: <%= result.metacritic %></p>
+            <% } %>
+          </div>
+          <img
+            src="<%= result.poster %>"
+            alt="coming"
+            style="display: block; margin: 0 auto; width: 280px; height: 380px"
+          />
+          <h3>Details</h3>
+
+          <% if (result.genres != null) {%> <% if (result.genres.length > 1) {%>
+          <p><b>Genre:</b>&nbsp&nbsp<%= result.genres.join(", ") %></p>
+          <% } else {%>
+          <p><b>Genre:</b>&nbsp&nbsp<%= result.genres%></p>
+          <% } %> <% } %>
+          <p><b>Length:</b>&nbsp&nbsp<%= result.runtime %> Minutes</p>
+          <% if (!result.rated) {%>
+          <p><b>Rated:</b>&nbsp&nbspNot Rated</p>
+          <% } else { %>
+          <p><b>Rated:</b>&nbsp&nbsp<%= result.rated %></p>
+          <% } %> <% if (result.languages != null) {%> <% if
+          (result.languages.length > 1) {%>
+          <p><b>Languages:</b>&nbsp&nbsp<%= result.languages.join(", ") %></p>
+          <% } else {%>
+          <p><b>Language:</b>&nbsp&nbsp<%= result.languages%></p>
+          <% } %> <% } %>
+        </div>
+
+        <div class="crew">
+          <h3>Crew/Cast</h3>
+          <% if (result.cast) {%>
+          <b>Actors:</b>
+          <% if (result.cast.length > 1) {%>
+          <p><%= result.cast.join(", ")%></p>
+          <% } else {%>
+          <p><%= result.cast%></p>
+          <% } %> <% } %>
+
+          <br />
+
+          <% if (result.directors) {%>
+          <b>Directors:</b>
+          <% if (result.directors.length > 1) {%>
+          <p><%= result.directors.join(", ") %></p>
+          <% } else {%>
+          <p><%= result.directors%></p>
+          <% } %> <% } %>
+
+          <br />
+
+          <% if (result.writers) {%>
+          <b>Writers:</b>
+          <% if (result.writers.length > 1) {%>
+          <p><%= result.writers.join(", ") %></p>
+          <% } else {%>
+          <p><%= result.writers %></p>
+          <% } %> <% } %>
+        </div>
+      </div>
+      <h3 class="desc">Description:</h3>
+      <div class="monDescrip">
+        <% if (result.fullplot) {%>
+        <p><%= result.fullplot %></p>
+        <% } %>
+      </div>
+    </div>
+    <br />
+    <br />
+
+    <% }) %>
+  </body>
+  <%- include('./partials/footer.ejs') %>
+</html>

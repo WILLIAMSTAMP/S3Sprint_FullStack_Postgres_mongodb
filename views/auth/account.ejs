@@ -1,0 +1,44 @@
+<!-- This is the account page where you can unsubscribe -->
+
+<html lang="en">
+<%- include("../partials/header.ejs") %>
+<body>
+  <%- include("../partials/nav2.ejs") %>
+  <h1 class="authHeader">My Account</h1>
+  <hr class="topDivider" />
+
+  <div class="account">
+    <div class="accDetails">
+      <table >
+        <tr>
+          <th class="profHeader">Account details</th>
+        </tr>
+        <tr>
+          <td><b>Full Name:</b></td>
+          <td><%= user.name %></td>
+        </tr>
+        <tr>
+          <td><b>Email:</b></td>
+          <td><%= user.email %></td>
+        </tr>
+        <tr>
+      </table>
+    </div>
+    <form action="/auth/account" method="POST">
+      <button type="submit">DELETE ACCOUNT?</button>
+    </form>
+  </div>
+  <div class="support">
+    <h2>Support</h2>
+    <h2> Please Contact the Following If you have any questions/concerns</h2>
+    
+    <br>
+    <br>
+    <h3> <strong>Phone:<strong> 709-555-5555</h3>
+    <h3> Email: rock_bust@support.com</h3>
+
+
+</div>
+</body>
+<%- include("../partials/footer.ejs") %>
+</html>

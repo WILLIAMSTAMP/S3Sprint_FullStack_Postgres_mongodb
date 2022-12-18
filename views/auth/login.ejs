@@ -1,0 +1,28 @@
+<!-- This is the login page -->
+
+<html lang="en">
+  <%- include("../partials/header.ejs") %>
+  <body style="padding-top: 200px;">
+    <%- include("../partials/nav.ejs") %>
+    <main class="loginContainer">
+      <form action="/auth/login" method="POST">
+        <h1 class="signUpInHeader">Login To ROCKBUSTER</h1>
+        <h4 class="authMessage">
+          <% if(messages.error) { %> <%- messages.error %> <% } %>
+        </h4>
+        <h4 class="authSuccess">
+          <%if(messages.success) { %> <%- messages.success %> <% } %>
+        </h4>
+        <label for="email">Email:<span class="required"></span> </label>
+        <input type="email" name="email" id="email" required />
+        <label for="password">Password:<span class="required"></span> </label>
+        <input type="password" name="password" id="password" required />
+        <button type="submit">Sign In</button>
+      </form>
+      <h5>
+        <a href="/auth/register">SIGN UP</a>
+      </h5>
+    </main>
+  </body>
+  <%- include("../partials/footer.ejs") %>
+</html>

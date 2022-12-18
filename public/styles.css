@@ -1,0 +1,617 @@
+@import url("https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@300&display=swap");
+
+/* Global ----------------------------------------------------------------*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: rgba(179, 179, 179, 0.3);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Nav Bar ----------------------------------------------------------------*/
+
+.navbar {
+  height: 60px;
+  position: relative;
+  display: flex;
+  padding: 1rem 2.625rem 1rem 2.625rem;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Anek Devanagari", sans-serif;
+  background-image: linear-gradient(to right, rgb(7, 1, 181), rgb(255, 217, 0));
+  border-bottom: 2px solid rgb(255, 255, 255, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: #002ed3;
+}
+
+.navbar .right a {
+  color: #002ed3;
+  font-weight: 900;
+}
+.navbarFooter {
+  bottom: 0;
+
+  width: 100%;
+  display: flex;
+  padding: 1rem 2.625rem 1rem 2.625rem;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Anek Devanagari", sans-serif;
+  color: #f9aa07;
+  background: rgb(16, 48, 173);
+  border-bottom: 2px solid rgb(255, 255, 255, 0.7);
+  position: fixed;
+  bottom: -10;
+  left: 0;
+  right: 0;
+}
+
+.navbar .left h1 {
+  float: left;
+  text-align: center;
+  color: #f9aa07;
+  font-weight: 1500;
+  font-size: 28px;
+  letter-spacing: 1px;
+  padding-top: 10px;
+}
+
+.navbar .navFlex .username {
+  font-family: "Anek Devanagari", sans-serif;
+  padding: 4em;
+}
+.navbar .navFlex {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navbar .navFlex .right a,
+.navbar .navFlex .home a {
+  display: inline-block;
+  padding: 14px;
+  text-decoration: none;
+  font-family: "Anek Devanagari", sans-serif;
+  letter-spacing: 0.5px;
+  font-size: 18px;
+  font-weight: 900;
+  color: rgb(34, 5, 255);
+}
+
+.navbar .home a:hover,
+.navbar .right a:hover {
+  display: inline-block;
+  position: relative;
+  color: #f9aa07;
+}
+/* ---------------------------------------------------------------- */
+
+/* Error Pages ----------------------------------------------------------------*/
+
+.errTxt {
+  margin: 1rem;
+  float: left;
+}
+
+.errTxt p {
+  color: rgb(37, 37, 37);
+  font-size: 21px;
+}
+
+.errTxt .errDescrip {
+  color: rgb(37, 37, 37);
+  margin-top: 1rem;
+  font-size: 19px;
+}
+
+/* Home Page CSS stuff*/
+
+.homeContainer {
+  margin: 2rem 1rem auto 1rem;
+}
+
+/* Mongo and PosGres search title colors */
+
+.homeContainer .mongoHeader {
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: "Anek Devanagari", sans-serif;
+  font-size: 20px;
+  margin-right: 0.5rem;
+  background-clip: text;
+  margin-left: 2.5rem;
+  color: green;
+}
+
+.homeContainer .postgresHeader {
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: "Anek Devanagari", sans-serif;
+  font-size: 20px;
+  margin-right: 0.5rem;
+  background-clip: text;
+  margin-left: 2.5rem;
+  color: grey;
+}
+/* search buttons and input  */
+.homeContainer .monSearch,
+.homeContainer .gresSearch {
+  display: flex;
+  justify-content: center;
+}
+.button {
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #002ed3;
+  color: white;
+}
+.homeContainer .monSearch input,
+.homeContainer .gresSearch input {
+  border: 0;
+  margin: 1rem 0.5rem 1rem 0.5rem;
+  padding: 4px;
+  min-width: 8%;
+  font-size: 16px;
+  border-bottom: 2px solid #f9aa07;
+  background: transparent;
+}
+
+.homeContainer .monSearch button,
+.homeContainer .gresSearch button {
+  width: 105px;
+  height: 40px;
+  margin-top: 4px;
+  border: none;
+  font-size: 1rem;
+  color: #f9aa07;
+  background-color: #0c3cab;
+  cursor: pointer;
+}
+
+.homeContainer .monSearch button:hover,
+.gresSearch button:hover {
+  background-color: rgb(25, 22, 84);
+  border: 4px solid;
+  border-image: linear-gradient(45deg);
+  border-image-slice: 1;
+  box-shadow: 0px 5px 28px 0px rgba(0, 0, 0, 0.35);
+}
+
+.moviesContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 40%);
+  grid-row-gap: 1.5rem;
+  position: relative;
+  left: 10%;
+  margin-top: 1.5rem;
+}
+
+.homeContainer hr {
+  height: 0px;
+  border: double 3px transparent;
+  border-radius: 16px;
+  background-color: #0c3cab;
+}
+
+.crew {
+  padding-top: 40px;
+  padding-left: 20px;
+}
+
+.mongoLogo {
+  position: relative;
+  margin: 12px auto 6px 1rem;
+}
+
+.moviesDetails {
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: center;
+}
+
+.moviesDetailsContainer {
+  display: flex;
+  justify-content: right;
+  margin: auto 1rem auto 1rem;
+  height: 20.96rem;
+}
+
+.moviesDetailsContainer h2 {
+  font-family: "Anek Devanagari", sans-serif;
+  font-size: 26px;
+  margin-bottom: 1em;
+  color: black;
+}
+
+.monDescrip {
+  padding-left: 27%;
+  position: relative;
+  /* padding: 2em; */
+  line-height: 21px;
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+  margin-bottom: 2rem;
+  max-width: 800px;
+ 
+}
+
+.mTitle{
+  display: flex;
+  justify-content: center;
+  font-weight: bolder;
+  font-size: 2.5rem;
+  font-family: "Anek Devanagari", sans-serif;
+}
+.desc {
+
+  position: relative;
+  display: grid;
+  justify-content: center;
+ padding-top: 15px;
+}
+
+.moviesDetailsContainer .moviesDetails {
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+.moviesDetailsContainer .moviesDetails .monSmallDetails .contributors .rating {
+  display: flex;
+  padding-left: 2em;
+  color: blue;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 33%;
+  text-align: left;
+  justify-content: left;
+  text-align: right;
+  width: 75%;
+}
+
+/* Postgres Details Page ----------------------------------------------------------------*/
+
+.postMovies {
+  padding-top: 150px;
+  margin: auto 1rem auto 1rem;
+}
+
+.postMovies h2 {
+  font-family: "Anek Devanagari", sans-serif;
+  font-size: 26px;
+  margin-bottom: 0.7rem;
+  background-clip: text;
+}
+
+.postMovies .filmDetails {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+.postMovies .filmDetails h3 {
+  font-family: "Anek Devanagari", sans-serif;
+  font-size: 20px;
+}
+
+.postMovies .filmDetails .smallDetails b {
+  color: rgb(37, 37, 37, 0.7);
+}
+
+.postMovies .filmDetails .smallDetails p {
+  position: relative;
+  left: 6px;
+  color: rgb(115, 115, 115);
+  font-size: 16px;
+}
+
+.postMovies .filmDetails .smallDetails {
+  width: 20%;
+  margin-left: 1rem;
+}
+
+.postMovies .filmDetails .actors {
+  width: 20%;
+  margin-left: 1rem;
+}
+
+.postMovies .filmDetails .actors p {
+  position: relative;
+  left: 6px;
+  color: rgb(115, 115, 115);
+  font-size: 16px;
+}
+
+.postMovies .TextArea textarea {
+  margin: 2rem auto auto 1.5rem;
+  padding: 0.5rem;
+  resize: none;
+  border: 2px solid rgb(37, 37, 37, 0.7);
+  border-radius: 6px;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.35);
+  background: transparent;
+}
+
+.postMovies .TextArea div {
+  display: flex;
+  flex-direction: column;
+}
+
+.postMovies .TextArea .txtBtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.postMovies .TextArea button {
+  padding: 0.1rem;
+  margin: 0.5rem 0.5rem auto 1.5rem;
+  width: 4rem;
+  color: rgb(37, 37, 37, 0.7);
+  border: 1px solid rgb(37, 37, 37, 0.7);
+  border-radius: 4px;
+
+  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.35);
+}
+
+.postMovies .TextArea button:hover {
+  color: rgb(37, 37, 37, 0.88);
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s ease 0s;
+}
+
+.postgresDesc {
+  position: relative;
+  width: 45%;
+  margin: 1rem 1rem 1rem 1rem;
+  line-height: 21px;
+}
+
+.postgresDesc h3 {
+  position: relative;
+  font-family: "Anek Devanagari", sans-serif;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.postgresDesc p {
+  position: relative;
+  font-size: 18px;
+  color: rgb(115, 115, 115);
+}
+
+.monSearchContainer {
+  background-color: #173376;
+  width: 100%;
+}
+
+.monSearchContainer .searchGridContainer {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-row-gap: 1.5rem;
+}
+
+.monSearchContainer .searchGridContainer .movieBox img {
+  border: 2px solid rgb(255, 255, 255, 0.7);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.35);
+}
+
+.monSearchContainer .searchGridContainer .movieBox a {
+  color: rgb(115, 115, 115);
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.monSearchContainer .searchGridContainer .movieBox a:active {
+  color: rgb(39, 167, 112);
+}
+
+.monSearchContainer .searchGridContainer .movieBox a:visited {
+  color: rgb(39, 167, 112);
+}
+
+.monSearchContainer h2 {
+  margin-left: 1.5rem;
+}
+/* ---------------------------------------------------------------- */
+
+/* Postgres Search Page ----------------------------------------------------------------*/
+
+.searchPostgresLogo {
+  display: flex;
+  justify-content: center;
+  margin: 14px 1rem auto 1rem;
+}
+
+.gresSearchContainer {
+  margin: auto 1rem 1rem 1rem;
+}
+
+.gresSearchContainer h2 {
+  font-family: "Anek Devanagari", sans-serif;
+  font-size: 28px;
+  margin-bottom: 1rem;
+  margin-left: 2.5rem;
+  background: linear-gradient(rgb(34, 167, 240), rgb(17, 95, 154));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gresSearchContainer .searchGridContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 1.5rem;
+}
+
+.gresSearchContainer .searchGridContainer .filmBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.7rem;
+  padding: 0.5rem 0.5rem 1rem 0.5rem;
+}
+
+.gresSearchContainer .searchGridContainer .filmBox img {
+  border: 2px solid rgb(255, 255, 255, 0.7);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.35);
+  margin-top: 35px;
+}
+
+.gresSearchContainer .searchGridContainer .filmBox a {
+  color: rgb(115, 115, 115);
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.gresSearchContainer .searchGridContainer .filmBox a:active,
+.gresSearchContainer .searchGridContainer .filmBox a:visited {
+  color: rgb(54, 141, 206);
+}
+
+.loginContainer,
+.registerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.signUpInHeader {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* adjustment height of Login area */
+.loginContainer form,
+.registerContainer form {
+  width: 360px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #f9aa07;
+  padding: 24px 40px;
+  border-radius: 1rem;
+  row-gap: 10px;
+  background-color: #0c3cab;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.35);
+  margin: auto;
+  margin-top: 4vh;
+  margin-bottom: 2%;
+  display: grid;
+  columns: 2;
+}
+/* to adjust height of sign up page */
+.registerContainer form {
+  margin-top: 8em;
+  padding: 2em;
+  row-gap: 8px;
+}
+
+.loginContainer input,
+.registerContainer input {
+  background-color: rgb(227, 227, 227);
+  width: 100%;
+  height: 25px;
+  padding: 4px;
+}
+
+.loginContainer h5,
+.registerContainer h5 {
+  text-align: center;
+  font-size: 1rem;
+  color: #0c3cab;
+}
+
+.loginContainer a:link,
+.loginContainer a:visited {
+  color: #0c3cab;
+  text-decoration: none;
+}
+
+.loginContainer a:link:hover,
+.loginContainer a:visited:hover {
+  color: #f9aa07;
+  text-decoration: none;
+}
+
+.loginContainer button,
+.registerContainer button {
+  margin: auto;
+  color: #f9aa07;
+  background-color: #0c3cab;
+  font-size: 1.2rem;
+  width: fit-content;
+  padding: 8px 16px;
+  border: none;
+}
+
+.loginContainer button:hover,
+.registerContainer button:hover {
+  color: rgb(255, 255, 255, 0.89);
+  transition: all 0.5s ease 0s;
+  cursor: pointer;
+}
+
+.authMessage {
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.authSuccess {
+  text-align: center;
+  font-size: 1.6rem;
+  color: rgb(45, 210, 178);
+}
+/* ---------------------------------------------------------------- */
+
+/* Account Page ----------------------------------------------------------------*/
+
+.authHeader {
+  font-family: "Anek Devanagari", sans-serif;
+  font-size: 28px;
+  margin: 2rem 1rem 1rem 2.5rem;
+  color: rgb(25, 22, 84);
+}
+
+.account {
+  display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 50px;
+}
+
+.account button {
+  background-color: #b60f03;
+  color: rgb(245, 245, 245);
+  margin: 100px;
+}
+
+.accDetails {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+
+.support {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+/* ---------------------------------------------------------------- */

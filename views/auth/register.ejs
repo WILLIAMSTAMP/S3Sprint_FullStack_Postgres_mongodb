@@ -1,0 +1,30 @@
+<!-- This is the register page -->
+
+<html lang="en">
+  <%- include("../partials/header.ejs") %>
+  <body>
+    <%- include("../partials/nav.ejs") %>
+    <main class="registerContainer">
+      <form action="/auth/register" method="POST">
+        <h1 class="signUpInHeader">Sign Up With ROCKBUSTER</h1>
+        <h4 class="authMessage">
+          <% if(messages.error) { %> <%- messages.error %> <% } %>
+        </h4>
+        <label for="name"
+          >Enter Full Name: <span class="required"></span>
+        </label>
+        <input type="name" name="name" required />
+        <label for="email">Email: <span class="required"></span> </label>
+        <input type="email" name="email" required />
+
+        <label for="password">Password: </label>
+        <input type="password" name="password" required />
+        <button type="submit">Sign Up</button>
+      </form>
+      <h5>
+        <a href="http://localhost:4000/auth/login">LOGIN</a>
+      </h5>
+    </main>
+  </body>
+  <%- include("../partials/footer.ejs") %>
+</html>

@@ -1,0 +1,30 @@
+<!-- This is the home page after logging in -->
+
+<html lang="en">
+  <%- include("./partials/header.ejs") %>
+
+  <body style="margin-top: 200px">
+    <%- include("./partials/nav2.ejs") %>
+    <div class="homeContainer">
+      <div class="mongoHeader">
+        <h2>Search Movies By MongoDB</h2>
+      </div>
+      <form class="monSearch" action="/search/mongo" method="GET">
+        <input type="text" placeholder="Search by MongoDb" name="search" />
+        <button type="submit">Search</button>
+      </form>
+
+      <div class="moviesContainer" id="monMoreData"></div>
+
+      <hr />
+      <div class="postgresHeader">
+        <h2>Search Movies By PostgreSQL</h2>
+      </div>
+      <form class="gresSearch" action="/search/postgres" method="GET">
+        <input type="text" placeholder="Search by Postgres" name="search" />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </body>
+  <%- include("./partials/Footer.ejs") %>
+</html>

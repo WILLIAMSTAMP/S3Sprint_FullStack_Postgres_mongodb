@@ -1,0 +1,34 @@
+<html lang="en">
+<%- include("../partials/header.ejs") %>
+<body class="profileBody">
+  <%- include("../partials/nav2.ejs") %>
+  <h1 class="authHeader">My Account</h1>
+  <hr class="topDivider" />
+  <div class="profileContainer">
+    <div class="profileDetails">
+      <table class="profileDetailsTable">
+        <tr>
+          <th class="profHeader">Account details</th>
+        </tr>
+        <tr>
+          <td><b>Full Name:</b></td>
+          <td><%= user.name %></td>
+        </tr>
+        <tr>
+          <td><b>Email:</b></td>
+          <td><%= user.email %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="profileFunctionsContainer">
+      <div class="profileAdditions">
+    <form action="/auth/profile" method="POST">
+      <button type="submit">DELETE ACCOUNT?</button>
+      <% if(messages.error2) { %>
+      <small class="reviewsMessage"> <%- messages.error2 %> </small>
+      <% } %>
+    </form>
+  </div>
+</body>
+<%- include("../partials/footer.ejs") %>
+</html>

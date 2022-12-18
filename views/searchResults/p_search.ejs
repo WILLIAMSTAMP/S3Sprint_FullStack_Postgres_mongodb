@@ -1,0 +1,31 @@
+<html lang="en">
+  <%- include('../partials/header.ejs') %>
+
+  <body style="background-color: rgb(198, 198, 198)">
+    <%- include('../partials/nav2.ejs') %>
+    <div class="searchPostgresLogo"></div>
+    <div class="gresSearchContainer">
+      <h2>Postgres Search Results</h2>
+      <% if (pSearch.length > 0) { %>
+      <div class="searchGridContainer">
+        <% pSearch.forEach(film => { %>
+        <div class="filmBox">
+          <img
+            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.thehungryjpeg.com%2Fthumbs2%2Fori_3514395_00613ae51dedd0652a510036f4c66ccb5a608ffd_coming-soon-vector-mystery-retail-concept-with-spotlights-on-stage.jpg&f=1&nofb=1&ipt=9078e22d7ceb41344212471c3c457f5f718267a6985cd1c63ffdf4f3d254f775&ipo=images"
+            alt=""
+            width="280"
+            height="280"
+          />
+          <a href="/search/postgres/<%= film.fid %>">
+            <p><b><%= film.title %></b> (<%= film.release_year %>)</p>
+          </a>
+        </div>
+        <% }) %> <% } else { %>
+        <p>No movies found.</p>
+        <% } %>
+      </div>
+    </div>
+  </body>
+  <% if (pSearch.length <= 5) { %> <%- include('../partials/footer.ejs') %> <% }
+  else {%> <%- include('../partials/footer.ejs') %> <% } %>
+</html>

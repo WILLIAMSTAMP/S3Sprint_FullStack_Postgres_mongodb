@@ -1,0 +1,32 @@
+<!-- This is the ejs for results for searching the Postgres  -->
+
+<html lang="en">
+  <%- include('./partials/header.ejs') %>
+  <body>
+    <%- include('./partials/nav2.ejs') %>
+    <div class="postMovies">
+      <h2 class="details_header">
+        <%= postMovies[0].title %> (<%= postMovies[0].release_year %>)
+      </h2>
+      <div class="filmDetails">
+        <div class="smallDetails">
+          <h3>Details</h3>
+          <p><b>Genre:</b>&nbsp&nbsp<%= postMovies[0].category %></p>
+          <p>
+            <b>Length:</b>&nbsp&nbsp<%= postMovies[0].period %>&nbsp&nbspMinutes
+          </p>
+          <p><b>Rating:</b>&nbsp&nbsp<%= postMovies[0].rating %></p>
+        </div>
+        <div class="actors">
+          <h3>Actors:</h3>
+          <p><%= postMovies[0].actors %>.</p>
+        </div>
+        <div class="postgresDesc">
+          <h3>Plot:</h3>
+          <p><%= postMovies[0].description %>.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <%- include('./partials/footer.ejs') %>
+</html>
